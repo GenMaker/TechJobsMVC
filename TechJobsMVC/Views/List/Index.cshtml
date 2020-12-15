@@ -11,15 +11,19 @@
         }
     </tr>
     <tr>
-        @{
+        
             //TODO #2: Complete the View Jobs By Category Table
-        }
+        <td>
+        // this calls on list action that looks into jobs and then activates the all function to display all the items that method finds.
 
-        <td></td> @* Feel free to remove or modify this element if necessary. *@
+            <a asp-controller="List" asp-action="Jobs" asp-route-column="all" asp-route-value="">View All</a>
+            </td> @* Feel free to remove or modify this element if necessary. *@
+
         @foreach (var category in ViewBag.tableChoices)
         {
             <td>
                 <ul>
+                    
                     @foreach (var item in category.Value)
                     {
                         <li>

@@ -15,7 +15,7 @@ namespace TechJobsMVC
         {
             CreateHostBuilder(args).Build().Run();
         }
-
+        //this creates the web page on startup
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>

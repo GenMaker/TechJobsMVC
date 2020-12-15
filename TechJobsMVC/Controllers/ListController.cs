@@ -12,6 +12,7 @@ namespace TechJobsMVC.Controllers
 {
     public class ListController : Controller
     {
+        //collects all of the different List and Search options presented throughout the user interface
         internal static Dictionary<string, string> ColumnChoices = new Dictionary<string, string>()
         {
             {"all", "All"},
@@ -20,6 +21,7 @@ namespace TechJobsMVC.Controllers
             {"positionType", "Position Type"},
             {"coreCompetency", "Skill"}
         };
+        //collects all of the different List and Search options presented throughout the user interface
         internal static Dictionary<string, List<JobField>> TableChoices = new Dictionary<string, List<JobField>>()
         {
             {"employer", JobData.GetAllEmployers()},
@@ -28,6 +30,7 @@ namespace TechJobsMVC.Controllers
             {"coreCompetency", JobData.GetAllCoreCompetencies()}
         };
 
+        // renders a view that displays a table of clickable links for different job catagories
         public IActionResult Index()
         {
             ViewBag.columns = ColumnChoices;
@@ -40,7 +43,7 @@ namespace TechJobsMVC.Controllers
             return View();
         }
 
-        // list jobs by column and value
+        // list jobs by column and value that relate to a selected category
         public IActionResult Jobs(string column, string value)
         {
             List<Job> jobs;
